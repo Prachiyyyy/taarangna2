@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            background-color: rgb(246, 156, 158);
+        }
+        header{
+            background-color: rgb(153, 195, 236);
+            color: white;
+            display: flex;
+            padding: 15px;
+            justify-content: space-between;
+        }
+        .s{
+            height: 20px;
+            width: 40%;
+            text-align: right;
+        }
+        .logo{
+            height: 100px;
+            width: 100px;
+            margin-top: -30px;
+            margin-left: -40px;
+        }
+        b {
+            margin:0px;
+            padding: 10px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            margin-left: 200px;
+            margin-right: 50px;
+            background-color:rgb(246, 156, 158);
+        }
+        a{
+            color: white;
+        }
+        
+        img {
+            object-fit: contain;
+            size: 100% 100%;
+        }
+ .slideshow {
+  position: relative;
+  width: 70%;
+  height: 400px;
+  overflow: hidden;
+  background-color: rgb(151, 227, 194);
+}
+ .main{
+    display: flex;
+    padding: 20px;
+ }
+ .text{
+    padding: 20px;
+    width: 30%;
+    color: white;
+    background-color: rgb(170, 210, 236);
+ }
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  }
+
+.slideshow img.active {
+  opacity: 1;
+}
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="logo-removebg-preview.png" alt="">
+    </div>
+    <div class="s">
+    <input type="text"  placeholder="Search">
+     <button>Sign In</button></div>
+</header>
+<div class="b">
+   <ul> 
+    <li><a href="#home">HOME</a></li>
+    <li> <a href="about.html">ABOUT US</a></li>
+    <li> <a href="gallery.html">GALLERY</a></li>
+    <li><a href="events.html">EVENTS</a></li>
+  </ul>
+</div>
+<div class="main">
+<div class="slideshow">
+    <img src="Bold Sale Brand Website Homepage Banner.png" alt="Image 1">
+    <img src="WhatsApp Image 2023-09-07 at 05.38.20.jpg" alt="Image 2">
+    <img src="WhatsApp Image 2023-09-07 at 05.38.21.jpg" alt="Image 3">
+    <img src="Blue Watercolor Background With Stars Blank Paper A4 Document.png" alt="Image 4">
+  </div>
+  <div class="text">
+    <p>Welcome to the website of the most amazing fest, organised by INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN, TAARANGANA!!!!</p>
+     <p>Taarangana welcomes you to the delightful chaos of learning and laughter. 🌈🎭
+
+        From dazzling lights to unforgettable memories, this is where all the magic happens. ✨
+        
+        Buckle up, rookies! Your adventure in this carnival is about to begin. 🎢
+        Prepare to unleash your creativity, groove to the beats of togetherness, and paint the campus with vibrant hues of talent and fun. 🎶
+        
+        Welcome aboard, the fun train is now departing! 🚂</p>
+        <p> DONT FORGET TO CHECK OUT THE EVENTS PAGE FOR FUN AND EXCITING EVENTS COMING YOUR WAY!!! 🥳🥳🥳</p>
+</div>
+  </div>
+  <script>
+  const slideshow = document.querySelector('.slideshow');
+  const images = slideshow.querySelectorAll('img');
+  
+  let currentIndex = 0;
+  let intervalId;
+  
+  function startSlideshow() {
+    intervalId = setInterval(() => {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }, 2000);
+  }
+  
+  function stopSlideshow() {
+    clearInterval(intervalId);
+  }
+  
+  startSlideshow();
+  </script>
+</body>
+</html>
